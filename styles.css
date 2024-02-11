@@ -2,12 +2,13 @@
   width: 80%;
   margin: 0 auto;
   padding: 20px;
-  background-image: url('IMG-20231005-WA0000.jpg'); /* Replace 'background_image.jpg' with your image */
+  background-image: url('IMG-20231005-WA0000.jpg'); /* Replace 'IMG-20231005-WA0000.jpg' with your image */
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   border-radius: 10px;
   color: #ffffff; /* Text color */
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the last value (0.5) to control transparency */
 }
 
 .page {
