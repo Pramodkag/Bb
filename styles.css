@@ -7,7 +7,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   border-radius: 10px;
-  color: #ffffff; /* Text color */
+  color: #000000; /* Text color */
   background-color: rgba(0, 0, 0, 0.5); /* Adjust the last value (0.5) to control transparency */
 }
 
