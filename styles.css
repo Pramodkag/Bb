@@ -24,7 +24,7 @@
 .page {
   position: relative;
   z-index: 1; /* Ensure pages appear above background image */
-  height: 1000px; /* Adjust the height as needed */
+  height: 2000px; /* Adjust the height as needed */
 }
 
 .button-container {
