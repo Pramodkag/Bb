@@ -3,30 +3,28 @@
   width: 80%;
   margin: 0 auto;
   padding: 20px;
+  border-radius: 10px;
+  color: #000000; /* Text color */
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url('IMG-20231005-WA0000.jpg'); /* Replace 'IMG-20231005-WA0000.jpg' with your image */
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   border-radius: 10px;
-  color: #000000; /* Text color */
-  background-color: rgba(0, 0, 0, 0.2); /* Adjust the last value (0.5) to control transparency */
+  opacity: 0.5; /* Adjust the opacity value to control transparency */
 }
 
 .page {
-  position: absolute; /* Position pages relative to the book container */
-  top: 0;
-  left: 0;
-  width: 100%; /* Make pages take full width */
+  position: relative;
+  z-index: 1; /* Ensure pages appear above background image */
   height: 1000px; /* Adjust the height as needed */
-  display: none; /* Hide all pages by default */
-}
-
-.page.active {
-  display: block; /* Show the active page */
-}
-
-h1, p {
-  color: inherit; /* Inherit text color from .book */
 }
 
 .button-container {
