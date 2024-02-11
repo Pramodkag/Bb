@@ -1,0 +1,37 @@
+.book {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-image: url('IMG-20231005-WA0000.jpg'); /* Replace 'background_image.jpg' with your image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  border-radius: 10px;
+  color: #ffffff; /* Text color */
+}
+
+.page {
+  display: none; /* Hide all pages by default */
+}
+
+.page.active {
+  display: block; /* Show the active page */
+}
+
+h1, p {
+  color: inherit; /* Inherit text color from .book */
+}
+
+button {
+  background-color: #007bff; /* Blue button background */
+  color: white; /* White button text */
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
