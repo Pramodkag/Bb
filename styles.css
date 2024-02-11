@@ -13,6 +13,7 @@
 
 .page {
   display: none; /* Hide all pages by default */
+  height: 500px; /* Adjust the height as needed */
 }
 
 .page.active {
