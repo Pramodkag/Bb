@@ -1,4 +1,5 @@
 .book {
+  position: relative; /* Position the book container */
   width: 80%;
   margin: 0 auto;
   padding: 20px;
@@ -8,12 +9,16 @@
   background-attachment: fixed;
   border-radius: 10px;
   color: #000000; /* Text color */
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust the last value (0.5) to control transparency */
+  background-color: rgba(0, 0, 0, 0.2); /* Adjust the last value (0.5) to control transparency */
 }
 
 .page {
+  position: absolute; /* Position pages relative to the book container */
+  top: 0;
+  left: 0;
+  width: 100%; /* Make pages take full width */
+  height: 2000px; /* Adjust the height as needed */
   display: none; /* Hide all pages by default */
-  height: 5000px; /* Adjust the height as needed */
 }
 
 .page.active {
@@ -22,6 +27,13 @@
 
 h1, p {
   color: inherit; /* Inherit text color from .book */
+}
+
+.button-container {
+  position: absolute;
+  bottom: 20px; /* Adjust the distance from the bottom as needed */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 button {
