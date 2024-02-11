@@ -9,53 +9,91 @@
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  .book {
+    width: 80%;
+    max-width: 600px;
+    height: 80%;
+    max-height: 800px;
+    overflow: hidden;
+    position: relative;
   }
   .page {
-    display: none;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
     padding: 20px;
     box-sizing: border-box;
+    display: none;
+    animation: fadeIn 0.5s ease-in-out forwards;
   }
-  .cover {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .page.active {
     display: block;
+  }
+  .page img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
   }
 </style>
 </head>
 <body>
-<div class="page cover">
-  <h1>Our story</h1>
-  <button onclick="showNextPage()">Next Page</button>
+
+<div class="book">
+  <div class="page active">
+    <h1 style="color: #007bff;">Cover Page</h1>
+    <p>Welcome to our story...</p>
+    <button onclick="showNextPage()">Next Page</button>
+  </div>
+  <div class="page">
+    <h1 style="color: #28a745;">Page 1: Only By Their Hearts</h1>
+    <p>One starlit night, nestled amidst plush hotel sheets, their conversation transformed into whispered confessions. Vulnerability bloomed, hearts laid bare, and in the tender space between them, their first kiss sparked, igniting a fire that burned brighter with each passing moment. The moon became their witness as they held each other close, sharing dreams and vulnerabilities, promises and laughter. In that silent embrace, they felt the universe shift, their individual stories merging into one beautiful narrative.</p>
+    <button onclick="showNextPage()">Next Page</button>
+  </div>
+  <div class="page">
+    <h1 style="color: #dc3545;">Page 2: Chapter 4 - Forever Entwined</h1>
+    <p>As their journey neared its end, they stood overlooking the vast expanse of the ocean, the salty wind carrying whispers of forever. The setting sun cast a golden glow on their faces, reflecting the love that shone brighter than any diamond. They vowed to navigate life's storms together, their love the anchor that would keep them steady. They promised to nurture their dreams, each other's biggest cheerleaders, celebrating triumphs and offering solace in moments of despair. With tearful goodbyes and promises to meet again soon, they boarded their separate trains, hearts heavy with bittersweet emotions. But even as the miles stretched between them, the warmth of their connection remained, a constant ember glowing within their hearts.</p>
+    <button onclick="showNextPage()">Next Page</button>
+  </div>
+  <div class="page">
+    <h1 style="color: #ffc107;">Page 3: Epilogue - A Love Story Unfolds</h1>
+    <p>Their story wasn't just about a chance meeting or a whirlwind romance. It was about two souls finding their missing pieces in each other, about laughter shared and tears dried, about dreams woven together and promises kept. It was about the quiet moments of understanding, the unspoken communication, and the unwavering support that formed the bedrock of their love. As Pramod and Asha continued their journey, their love story unfolded like a timeless ballad, etched in the tapestry of their lives. With every shared sunrise and whispered prayer, every triumph and struggle they faced hand-in-hand, their love grew stronger, a testament to the enduring power of two hearts beating as one.</p>
+    <button onclick="showNextPage()">Next Page</button>
+  </div>
+  <div class="page">
+    <h1 style="color: #6c757d;">The End</h1>
+    <p>Thank you for reading!</p>
+  </div>
 </div>
-<div class="page">
-  <h1>Page 1: Only By Their Hearts</h1>
-  <p>One starlit night, nestled amidst plush hotel sheets, their conversation transformed into whispered confessions...</p>
-  <button onclick="showNextPage()">Next Page</button>
-</div>
-<div class="page">
-  <h1>Page 2: Chapter 4 - Forever Entwined</h1>
-  <p>As their journey neared its end, they stood overlooking the vast expanse of the ocean...</p>
-  <button onclick="showNextPage()">Next Page</button>
-</div>
-<div class="page">
-  <h1>Page 3: Epilogue - A Love Story Unfolds</h1>
-  <p>Their story wasn't just about a chance meeting or a whirlwind romance...</p>
-  <button onclick="showNextPage()">Next Page</button>
-</div>
-<div class="page">
-  <h1>The End</h1>
-  <p>Thank you for reading!</p>
-</div>
+
 <script>
   let currentPageIndex = 0;
   const pages = document.querySelectorAll('.page');
   function showNextPage() {
-    pages[currentPageIndex].style.display = 'none';
+    pages[currentPageIndex].classList.remove('active');
     currentPageIndex++;
     if (currentPageIndex >= pages.length) {
       currentPageIndex = 0; // Reset to first page
     }
-    pages[currentPageIndex].style.display = 'block';
+    pages[currentPageIndex].classList.add('active');
   }
 </script>
+
 </body>
 </html>
